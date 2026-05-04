@@ -1,0 +1,1 @@
+bot_camp_look_spot [name] [CT|T|any]

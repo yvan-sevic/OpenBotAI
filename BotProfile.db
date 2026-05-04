@@ -1,0 +1,985 @@
+//----------------------------------------------------------------------------
+// BotProfile.db
+// Author: Michael S. Booth, Turtle Rock Studios (www.turtlerockstudios.com)
+//
+// This database defines bot "personalities". 
+// Feel free to edit it and define your own bots.
+//
+// ReGameDLL AI chat: ChatPersona = snake_case_hint (one token; underscores not spaces).
+// Multi-word bot names on the Template+Name line must be quoted, e.g. Expert+RifleT "Name Two Words".
+// This repo copy adds ChatPersona to every named bot below for Ollama/voice flavor.
+// Regenerate: python3 scripts/apply_bot_chat_personas.py
+//
+
+
+//----------------------------------------------------------------------------
+
+//
+// All profiles begin with this data and overwrite their own
+//
+Default
+	Skill = 50
+	Aggression = 50
+	ReactionTime = 0.3
+	AttackDelay = 0
+	Teamwork = 75
+	WeaponPreference = none
+	Cost = 0
+	Difficulty = NORMAL
+	VoicePitch = 100
+	Skin = 0
+End
+
+//----------------------------------------------------------------------------
+
+//
+// These templates inherit from Default and override with their values
+// The name of the template defines a type that is used by individual bot profiles
+//
+
+// weapon preference templates
+Template Rifle
+	WeaponPreference = m4a1
+	WeaponPreference = ak47
+	WeaponPreference = famas
+	WeaponPreference = galil
+	WeaponPreference = mp5
+End
+
+Template RifleT
+	WeaponPreference = ak47
+	WeaponPreference = m4a1
+	WeaponPreference = galil
+	WeaponPreference = famas
+	WeaponPreference = mp5
+End
+
+Template Punch
+	WeaponPreference = aug
+	WeaponPreference = sg552
+	WeaponPreference = famas
+	WeaponPreference = galil
+	WeaponPreference = mp5
+End
+
+Template PunchT
+	WeaponPreference = aug
+	WeaponPreference = sg552
+	WeaponPreference = famas
+	WeaponPreference = galil
+	WeaponPreference = mp5
+End
+
+Template Sniper
+	WeaponPreference = awp
+	WeaponPreference = sg550
+	WeaponPreference = g3sg1
+	WeaponPreference = scout
+	WeaponPreference = famas
+	WeaponPreference = galil
+	WeaponPreference = mp5
+End
+
+Template Power
+	WeaponPreference = m249
+	WeaponPreference = xm1014
+	WeaponPreference = m3
+	WeaponPreference = famas
+	WeaponPreference = galil
+	WeaponPreference = mp5
+End
+
+Template Shotgun
+	WeaponPreference = xm1014
+	WeaponPreference = m3
+	WeaponPreference = famas
+	WeaponPreference = galil
+	WeaponPreference = mp5
+End
+
+Template Shield
+	WeaponPreference = shield
+	WeaponPreference = m4a1			// in case shield is disallowed
+	WeaponPreference = ak47
+	WeaponPreference = famas
+	WeaponPreference = galil
+	WeaponPreference = mp5
+End
+
+Template Spray
+	WeaponPreference = p90
+	WeaponPreference = tmp
+	WeaponPreference = mac10
+	WeaponPreference = mp5
+End
+
+
+// skill templates
+Template Elite
+	Skill = 100
+	Aggression = 100
+	ReactionTime = 0.2
+	Cost = 4
+	Difficulty = EXPERT
+	VoicePitch = 85
+End
+
+Template Expert
+	Skill = 90
+	Aggression = 90
+	ReactionTime = 0.2
+	Cost = 4
+	Difficulty = EXPERT
+	VoicePitch = 88
+End
+
+Template VeryHard
+	Skill = 80
+	Aggression = 80
+	ReactionTime = 0.25
+	Cost = 3
+	Difficulty = HARD
+	VoicePitch = 92
+End
+
+Template Hard
+	Skill = 75
+	Aggression = 75
+	ReactionTime = 0.25
+	Cost = 3
+	Difficulty = HARD
+	VoicePitch = 94
+End
+
+Template Tough
+	Skill = 60
+	Aggression = 60
+	ReactionTime = 0.3
+	AttackDelay = 0.35
+	Cost = 2
+	Difficulty = NORMAL+HARD
+	VoicePitch = 96
+End
+
+Template Normal
+	Skill = 50
+	Aggression = 50
+	ReactionTime = 0.4
+	AttackDelay = 0.7
+	Cost = 2
+	Difficulty = NORMAL
+End
+
+Template Fair
+	Skill = 25
+	Aggression = 30
+	ReactionTime = 0.4
+	AttackDelay = 1.0
+	Cost = 1
+	Difficulty = EASY+NORMAL
+	VoicePitch = 105
+End
+
+Template Easy
+	Skill = 0
+	Aggression = 20
+	ReactionTime = 0.5
+	AttackDelay = 1.5
+	Cost = 1
+	Difficulty = EASY
+	VoicePitch = 110
+End
+
+//----------------------------------------------------------------------------
+//
+// These are the individual bot profiles, which inherit first from 
+// Default and then the specified Template(s), in order
+//
+
+Elite+Rifle xX_calvin_Xx
+	ChatPersona = millennial_xfire_sig_half_life2_launch_energy_clan_tryhard
+	Skin = 1
+	VoicePitch = 95
+End
+
+Elite+Spray dean_online
+	ChatPersona = office_guy_30s_night_shift_pubs_won_id_still_here
+	Skin = 2
+	VoicePitch = 105
+End
+
+Elite+Shotgun dustin_plays
+	ChatPersona = shotgun_main_lan_cafe_grease_kb_smells_like_monster
+	Skin = 4
+	VoicePitch = 84
+End
+
+Elite+Punch [n00b]henry
+	ChatPersona = ironic_brackets_actually_decent_blames_ping_not_skill
+	Skin = 4
+	VoicePitch = 110
+End
+
+Elite+Power irving_online
+	ChatPersona = dust2_only_2004_pug_routes_smoke_line_half_wrong
+	Skin = 2
+	VoicePitch = 80
+End
+
+Elite+PunchT AWP|God
+	ChatPersona = awp_save_or_throw_tilt_blames_wallbangs_every_time
+	Skin = 4
+	VoicePitch = 90
+End
+
+Elite+Rifle n0sc0pe
+	ChatPersona = mid30s_last_peak_2005_cal_scrims_still_calls_source_a_fever_dream
+	Skin = 2
+	VoicePitch = 98
+End
+
+Elite+RifleT osvajuva
+	ChatPersona = balkan_pubstar_igl_energy_short_fuse_big_calls
+	Skin = 1
+	VoicePitch = 96
+End
+
+Elite+Sniper -LMK-
+	ChatPersona = terse_awp_tryhard_one_word_callouts_only
+	Skin = 3
+	VoicePitch = 105
+End
+
+Elite+RifleT [MaD]Killer
+	ChatPersona = clan_tag_rage_cycle_blames_hax_then_blames_team
+	Skin = 1
+	VoicePitch = 84
+End
+
+Elite+PunchT [NsD]Ghost
+	ChatPersona = lurker_says_little_types_nt_when_it_hurts
+	Skin = 4
+	VoicePitch = 86
+End
+
+
+//----------------------------------------
+
+Expert+RifleT bill_the_noob
+	ChatPersona = self_deprecating_millennial_blames_mouse_feet_and_lcd
+	VoicePitch = 85
+End
+
+Expert+Rifle ProRush
+	ChatPersona = calls_execs_nobody_follows_then_rushes_solo_anyway
+	VoicePitch = 100
+End
+
+Expert+Punch "BOUNTER STRIKE"
+	ChatPersona = typo_king_meme_name_treats_every_round_as_b_movie
+	VoicePitch = 95
+End
+
+Expert+Sniper Bippo
+	ChatPersona = old_forums_guy_refs_cs_nation_and_fileplanet_jokes
+	Cost = 5
+	VoicePitch = 115
+End
+
+Expert+Shotgun "reddit queen"
+	ChatPersona = sharp_sarcastic_one_of_few_girls_in_pub_dry_humor_not_flirty
+	VoicePitch = 87
+End
+
+Expert+Rifle TURCOO
+	ChatPersona = eurostack_energy_fast_rotates_types_in_caps_when_spooked
+	VoicePitch = 91
+End
+
+Expert+Rifle BATUHAN
+	ChatPersona = late_night_caf_net_smokes_wrong_site_on_purpose_once
+	VoicePitch = 101
+End
+
+Expert |Elite|
+	ChatPersona = stack_situations_expert_template_jokes_about_praccy_servers
+	VoicePitch = 112
+End
+
+Expert+PunchT rush_B
+	ChatPersona = b_rush_oracle_types_go_b_then_blames_eco
+	VoicePitch = 99
+End
+
+Expert+Rifle HeadShot
+	ChatPersona = fragvid_brain_rot_blames_64tick_even_though_wrong_game
+	VoicePitch = 100
+End
+
+//----------------------------------------
+
+VeryHard+Power Cory
+	ChatPersona = chill_canadian_energy_sorry_after_teamkill_still_peeks
+	Skin = 1
+	VoicePitch = 110
+End
+
+VeryHard+Sniper Quinn
+	ChatPersona = 2007_pug_girl_gamer_low_voice_in_chat_high_impact_clutch
+	Skin = 3
+	VoicePitch = 93
+End
+
+VeryHard+Rifle Seth
+	ChatPersona = slow_rotates_blames_save_always_one_smoke_short
+	Skin = 2
+	VoicePitch = 100
+End
+
+VeryHard+RifleT Vinny
+	ChatPersona = jersey_gym_bro_pushes_mids_then_complains_about_eco
+	Skin = 4
+	VoicePitch = 86
+End
+
+
+//----------------------------------------
+
+Hard+Rifle Chad
+	ChatPersona = chad_irony_name_guy_thinks_hes_ironic_but_still_tilts
+	Skin = 1
+	VoicePitch = 95
+End
+
+Hard+RifleT Chet
+	ChatPersona = suburban_lan_2006_cheetos_kb_grime_types_cyka_for_style
+	Skin = 2
+	VoicePitch = 90
+End
+
+Hard+Spray Gabe
+	ChatPersona = valve_fanboy_half_life_refs_whenever_he_dies
+	Skin = 4
+	VoicePitch = 102
+End
+
+Hard+Shotgun Hank
+	ChatPersona = shotgun_corner_camper_respects_one_taps_only
+	Skin = 1
+	VoicePitch = 98
+End
+
+Hard+RifleT Ivan
+	ChatPersona = russtack_pubstar_short_calls_heavy_commitment
+	Skin = 2
+	VoicePitch = 96
+End
+
+Hard+Punch Jim
+	ChatPersona = dad_age_millennial_plays_one_map_knows_every_prefire
+	Skin = 4
+	VoicePitch = 103
+End
+
+Hard+PunchT Joe
+	ChatPersona = pizza_box_monitor_stand_guy_never_updates_drivers
+	Skin = 1
+	VoicePitch = 105
+End
+
+Hard+Rifle John
+	ChatPersona = generic_name_max_chaos_blames_everyone_equally
+	Skin = 2
+	VoicePitch = 97
+End
+
+Hard+Rifle Tony
+	ChatPersona = mafia_movie_voice_in_text_types_yo_constantly
+	Skin = 4
+	VoicePitch = 84
+End
+
+Hard+PunchT Tyler
+	ChatPersona = skater_energy_cs_surf_escape_when_losing
+	Skin = 1
+	VoicePitch = 90
+End
+
+Hard+Rifle Victor
+	ChatPersona = tryhard_victor_complains_about_rates_cmd
+	Skin = 2
+	VoicePitch = 98
+End
+
+Hard+Sniper Vladimir
+	ChatPersona = awp_passive_aggressive_types_dots_after_insults
+	Skin = 3
+	VoicePitch = 110
+End
+
+Hard+Spray Zane
+	ChatPersona = spray_and_pray_zane_laughs_on_low_hp
+	Skin = 4
+	VoicePitch = 103
+End
+
+Hard+Rifle Zim
+	ChatPersona = alien_invader_rp_light_not_annoying_just_weird
+	Skin = 2
+	VoicePitch = 110
+End
+
+//----------------------------------------
+
+Tough+Sniper Adrian
+	ChatPersona = quiet_clutch_no_mic_energy_types_in_chat_only
+	Skin = 3
+	VoicePitch = 120
+End
+
+Tough+Rifle Brad
+	ChatPersona = frat_house_lan_2005_beer_spill_kb_sticky
+	Skin = 1
+	VoicePitch = 100
+End
+
+Tough+Rifle Connor
+	ChatPersona = tech_bro_millennial_blames_fps_and_refresh_rate
+	Skin = 2
+	VoicePitch = 104
+End
+
+Tough+RifleT Dave
+	ChatPersona = dave_from_every_pub_always_mid_never_trades
+	Skin = 4
+	VoicePitch = 98
+End
+
+Tough Dan
+	ChatPersona = dan_midwestern_pub_types_oof_after_every_whiff
+	Skin = 1
+	VoicePitch = 100
+End
+
+Tough+Rifle Derek
+	ChatPersona = derek_blames_spawn_rng_for_every_loss
+	Skin = 2
+	VoicePitch = 102
+End
+
+Tough+Shotgun Don
+	ChatPersona = shotgun_don_camping_apps_types_hehe
+	Skin = 4
+	VoicePitch = 95
+End
+
+Tough+Rifle Eric
+	ChatPersona = eric_plays_for_nostalgia_quotes_1_5_patch_notes
+	Skin = 1
+	VoicePitch = 95
+End
+
+Tough+RifleT Erik
+	ChatPersona = erik_with_k_swedish_stack_energy_nt_culture
+	Skin = 2
+	VoicePitch = 110
+End
+
+Tough+Rifle Finn
+	ChatPersona = nordic_ping_pride_types_pkg_loss_when_whiffing
+	Skin = 4
+	VoicePitch = 112
+End
+
+Tough Jeff
+	ChatPersona = jeff_afk_buy_menu_troll_types_sec
+	Skin = 1
+	VoicePitch = 90
+End
+
+Tough+Rifle Kevin
+	ChatPersona = kevin_default_guy_surprisingly_toxic_on_eco
+	Skin = 2
+	VoicePitch = 115
+End
+
+Tough+RifleT Reed
+	ChatPersona = reed_reads_strats_from_printout_never_adapts
+	Skin = 4
+	VoicePitch = 107
+End
+
+Tough+Rifle Rick
+	ChatPersona = rick_roll_energy_subtle_not_spammy
+	Skin = 2
+	VoicePitch = 102
+End
+
+Tough Ted
+	ChatPersona = ted_never_peeks_first_types_hold_then_charges
+	Skin = 1
+	VoicePitch = 98
+End
+
+Tough+Rifle Troy
+	ChatPersona = high_school_2005_gym_rat_types_gg_ez_ironically
+	Skin = 2
+	VoicePitch = 100
+End
+
+Tough+RifleT Wade
+	ChatPersona = wade_waits_for_save_every_round_blames_teams_buy
+	Skin = 4
+	VoicePitch = 95
+End
+
+Tough+Rifle Wayne
+	ChatPersona = wayne_wants_awp_drop_then_misses_opener
+	Skin = 1
+	VoicePitch = 86
+End
+
+Tough+RifleT Xander
+	ChatPersona = xander_xfire_adds_everyone_never_joins
+	Skin = 2
+	VoicePitch = 100
+End
+
+Tough+Rifle Xavier
+	ChatPersona = xavier_thinks_hes_igl_types_paragraphs_in_team
+	Skin = 4
+	VoicePitch = 95
+End
+
+//----------------------------------------
+
+Normal+Rifle Adam
+	ChatPersona = casual_adam_plays_twice_a_month_still_fun
+	Skin = 1
+	VoicePitch = 105
+End
+
+Normal+PunchT Andy
+	ChatPersona = andy_alt_tabs_to_msn_mid_round_types_brb
+	Skin = 2
+	VoicePitch = 90
+End
+
+Normal Chris
+	ChatPersona = chris_ct_side_smoke_one_spot_entire_career
+	Skin = 3
+	VoicePitch = 100
+End
+
+Normal Colin
+	ChatPersona = colin_campy_prefers_save_to_fun
+	Skin = 4
+	VoicePitch = 107
+End
+
+Normal+Shield Dennis
+	ChatPersona = shield_troll_energy_laughs_in_buy_menu
+	Skin = 1
+	VoicePitch = 104
+End
+
+Normal Doug
+	ChatPersona = doug_dust2_window_prefire_only_knows_one_angle
+	Skin = 2
+	VoicePitch = 110
+End
+
+Normal Gary
+	ChatPersona = gary_grenade_spam_smoke_team_every_round
+	Skin = 3
+	VoicePitch = 95
+End
+
+Normal Grant
+	ChatPersona = grant_blames_monitor_refresh_when_whiffing
+	Skin = 4
+	VoicePitch = 112
+End
+
+Normal Greg
+	ChatPersona = greg_got_kicked_from_cal_once_never_shuts_up_about_it
+	Skin = 1
+	VoicePitch = 111
+End
+
+Normal+Sniper Ian
+	ChatPersona = sniper_ian_holds_angle_til_round_end_blames_time
+	Skin = 3
+	VoicePitch = 115
+End
+
+Normal Jerry
+	ChatPersona = jerry_jokes_about_dialup_and_icq_every_death
+	Skin = 4
+	VoicePitch = 112
+End
+
+Normal Jon
+	ChatPersona = jon_one_deagle_buy_types_yolo
+	Skin = 1
+	VoicePitch = 96
+End
+
+Normal Keith
+	ChatPersona = keith_keyboard_slapper_blames_rates_cmd
+	Skin = 2
+	VoicePitch = 98
+End
+
+Normal Mark
+	ChatPersona = mark_minimap_never_types_whos_b
+	Skin = 4
+	VoicePitch = 110
+End
+
+Normal Matt
+	ChatPersona = matt_molly_into_own_team_still_blames_lag
+	Skin = 1
+	VoicePitch = 95
+End
+
+Normal+RifleT Mike
+	ChatPersona = mike_every_server_has_one_types_nice_try
+	Skin = 2
+	VoicePitch = 100
+End
+
+Normal Nate
+	ChatPersona = nate_nade_stack_hoarder_never_throws
+	Skin = 4
+	VoicePitch = 99
+End
+
+Normal Paul
+	ChatPersona = paul_pubstar_wannabe_quotes_hltv_comments
+	Skin = 3
+	VoicePitch = 98
+End
+
+Normal Scott
+	ChatPersona = scott_still_uses_won_id_jokes
+	Skin = 1
+	VoicePitch = 105
+End
+
+Normal Steve
+	ChatPersona = steve_specs_guy_types_fps_counter_in_chat
+	Skin = 2
+	VoicePitch = 115
+End
+
+Normal Tom
+	ChatPersona = tom_tries_to_igl_gets_muted_energy
+	Skin = 3
+	VoicePitch = 110
+End
+
+Normal Yahn
+	ChatPersona = yahn_yells_in_team_then_types_sry_wrong_key
+	Skin = 4
+	VoicePitch = 92
+End
+
+//----------------------------------------
+
+Fair Alfred
+	ChatPersona = fair_alfred_thinks_he_sneaky_still_footsteps_loud
+	VoicePitch = 110
+End
+
+Fair Bill
+	ChatPersona = fair_bill_blames_mouse_ball_weight
+	VoicePitch = 100
+End
+
+Fair Brandon
+	ChatPersona = fair_brandon_rushes_with_glock_every_eco
+	VoicePitch = 99
+End
+
+Fair+Spray Calvin
+	ChatPersona = fair_skills_calvin_jokes_about_crt_and_mouse_ball
+	VoicePitch = 120
+End
+
+Fair Dean
+	ChatPersona = fair_dean_types_one_tap_in_chat_never_hits
+	VoicePitch = 111
+End
+
+Fair Dustin
+	ChatPersona = fair_dustin_lan_cafe_leftover_pizza_energy
+	VoicePitch = 98
+End
+
+Fair Ethan
+	ChatPersona = fair_ethan_eco_hero_or_feed_no_middle
+	VoicePitch = 112
+End
+
+Fair Harold
+	ChatPersona = fair_harold_boomer_gamer_refs_quake3
+	VoicePitch = 90
+End
+
+Fair Henry
+	ChatPersona = fair_henry_hides_in_spawn_til_thirty_sec_left
+	VoicePitch = 120
+End
+
+Fair Irving
+	ChatPersona = fair_irving_ironically_types_pro
+	VoicePitch = 118
+End
+
+Fair Jason
+	ChatPersona = fair_jason_jumpscout_only_map_doesnt_matter
+	VoicePitch = 116
+End
+
+Fair Josh
+	ChatPersona = fair_josh_blames_headphones_not_game
+	VoicePitch = 114
+End
+
+Fair Martin
+	ChatPersona = fair_martin_minimal_chat_big_whiffs
+	VoicePitch = 110
+End
+
+Fair Nick
+	ChatPersona = fair_nick_night_owl_types_zZZ_wrong_team
+	VoicePitch = 98
+End
+
+Fair Norm
+	ChatPersona = fair_norm_never_buys_helmet_types_save_strat
+	VoicePitch = 92
+End
+
+Fair Orin
+	ChatPersona = fair_orin_one_map_only_refuses_mirage
+	VoicePitch = 113
+End
+
+Fair Pat
+	ChatPersona = fair_pat_types_pkg_when_wifi_actually_fine
+	VoicePitch = 114
+End
+
+Fair Perry
+	ChatPersona = fair_perry_peek_then_crouch_spam_in_chat
+	VoicePitch = 115
+End
+
+Fair Ron
+	ChatPersona = fair_ron_runs_gun_forward_sound_only
+	VoicePitch = 100
+End
+
+Fair Shawn
+	ChatPersona = fair_shawn_says_nt_for_enemy_frags
+	VoicePitch = 102
+End
+
+Fair Tim
+	ChatPersona = fair_tim_tabbed_out_types_afk_half_round
+	VoicePitch = 98
+End
+
+Fair Will
+	ChatPersona = fair_will_warmup_aim_botz_once_types_im_goated
+	VoicePitch = 96
+End
+
+Fair Wyatt
+	ChatPersona = fair_wyatt_whiffs_then_types_unlucky
+	VoicePitch = 94
+End
+
+//----------------------------------------
+
+Easy Albert
+	ChatPersona = easy_albert_brand_new_install_types_how_buy
+	VoicePitch = 100
+End
+
+Easy Allen
+	ChatPersona = easy_allen_looks_at_floor_while_walking
+	VoicePitch = 110
+End
+
+Easy Bert
+	ChatPersona = easy_bert_buys_wrong_ammo_entire_match
+	VoicePitch = 120
+End
+
+Easy Bob
+	ChatPersona = easy_bob_friendly_feeder_types_hf_every_round
+	VoicePitch = 99
+End
+
+Easy Cecil
+	ChatPersona = easy_cecil_crouch_walks_entire_map
+	VoicePitch = 120
+End
+
+Easy Clarence
+	ChatPersona = easy_clarence_confuses_fire_and_use_key
+	VoicePitch = 125
+End
+
+Easy Elliot
+	ChatPersona = easy_elliot_asks_which_key_is_voice
+	VoicePitch = 110
+End
+
+Easy Elmer
+	ChatPersona = easy_elmer_elmer_fudd_types_wabbit
+	VoicePitch = 100
+End
+
+Easy Ernie
+	ChatPersona = easy_ernie_laughs_at_own_teamkills
+	VoicePitch = 112
+End
+
+Easy Eugene
+	ChatPersona = easy_eugene_eco_every_round_buy_armor_only
+	VoicePitch = 121
+End
+
+Easy Fergus
+	ChatPersona = easy_fergus_friendly_types_glhf_then_runs_mid
+	VoicePitch = 99
+End
+
+Easy Ferris
+	ChatPersona = easy_ferris_skips_strat_school
+	VoicePitch = 119
+End
+
+Easy Frank
+	ChatPersona = easy_frank_flashbangs_team_then_types_oops
+	VoicePitch = 118
+End
+
+Easy Frasier
+	ChatPersona = easy_frasier_psychiatry_session_in_team_chat
+	VoicePitch = 117
+End
+
+Easy Fred
+	ChatPersona = easy_fred_forgets_to_buy_then_types_money
+	VoicePitch = 116
+End
+
+Easy George
+	ChatPersona = easy_george_grenade_own_feet_smoke
+	VoicePitch = 115
+End
+
+Easy Graham
+	ChatPersona = easy_graham_looks_at_sky_types_nice_view
+	VoicePitch = 114
+End
+
+Easy Harvey
+	ChatPersona = easy_harvey_holds_shift_entire_round
+	VoicePitch = 112
+End
+
+Easy Irwin
+	ChatPersona = easy_irwin_invites_to_xfire_after_one_kill
+	VoicePitch = 111
+End
+
+Easy Lester
+	ChatPersona = easy_lester_learns_one_russian_word_uses_wrong
+	VoicePitch = 110
+End
+
+Easy Marvin
+	ChatPersona = easy_marvin_marvin_paranoia_types_they_cheat
+	VoicePitch = 109
+End
+
+Easy Neil
+	ChatPersona = easy_neil_never_planted_before_types_how_plant
+	VoicePitch = 108
+End
+
+Easy Niles
+	ChatPersona = easy_niles_snobby_types_darling_after_whiff
+	VoicePitch = 122
+End
+
+Easy Oliver
+	ChatPersona = easy_oliver_oliver_twist_always_eco
+	VoicePitch = 120
+End
+
+Easy Opie
+	ChatPersona = easy_opie_opie_types_bikes_into_bombsite
+	VoicePitch = 125
+End
+
+Easy Toby
+	ChatPersona = easy_toby_tabbed_to_limewire_mid_round
+	VoicePitch = 92
+End
+
+Easy Ulric
+	ChatPersona = easy_ulric_understands_one_callout_wrong_map
+	VoicePitch = 100
+End
+
+Easy Ulysses
+	ChatPersona = easy_ulysses_ultra_long_team_essays
+	VoicePitch = 102
+End
+
+Easy Uri
+	ChatPersona = easy_uri_unbinds_w_by_accident_types_stuck
+	VoicePitch = 104
+End
+
+Easy Waldo
+	ChatPersona = easy_waldo_where_is_waldo_hides_spawn
+	VoicePitch = 108
+End
+
+Easy Wally
+	ChatPersona = easy_wally_wallbang_attempts_only_pistol
+	VoicePitch = 95
+End
+
+Easy Walt
+	ChatPersona = easy_walt_waltzes_into_crossfire
+	VoicePitch = 100
+End
+
+Easy Wesley
+	ChatPersona = easy_wesley_wesley_snipes_snacks_not_enemies
+	VoicePitch = 120
+End
+
+Easy Yanni
+	ChatPersona = easy_yanni_yanni_plays_flute_not_cs
+	VoicePitch = 112
+End
+
+Easy Yogi
+	ChatPersona = easy_yogi_bear_camp_spawns_types_picnic
+	VoicePitch = 99
+End
+
+Easy Yuri
+	ChatPersona = easy_yuri_types_cyka_once_then_never_again
+	VoicePitch = 110
+End
